@@ -17,4 +17,5 @@ VALUES
 	('Sliced Almonds', '20', 'False'),
 	('Bananas', '3', 'False');
 
+
 SELECT * FROM "list";
