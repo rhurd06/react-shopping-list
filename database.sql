@@ -4,16 +4,18 @@
 CREATE TABLE "list" (
 	"id" SERIAL PRIMARY KEY,
 	"name" VARCHAR (80) NOT NULL,
-	"quantity" DECIMAL
+	"quantity" DECIMAL,
+	"purchased" BOOLEAN DEFAULT 'False'
 );
 
-INSERT INTO "list" ("name", "quantity")
+INSERT INTO "list" ("name", "quantity", "purchased")
 
 VALUES 
-	('Apples', '5'),
-	('Milk', '1'),
-	('Bread', '1'),
-	('Sliced Almonds', '20'),
-	('Bananas', '3');
+	('Apples', '5', 'True'),
+	('Milk', '1', 'False'),
+	('Bread', '1', 'True'),
+	('Sliced Almonds', '20', 'False'),
+	('Bananas', '3', 'False');
+
 
 SELECT * FROM "list";
