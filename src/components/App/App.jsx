@@ -1,7 +1,15 @@
+
+import React, { useState } from 'react';
+
+import Header from '../Header/Header.jsx';
+import GroceryList from '../GroceryList/GroceryList';
+
+
 import React, { useEffect, useState } from 'react';
 
 import Header from '../Header/Header.jsx'
 import GroceryForm from '../GroceryForm/GroceryForm'
+
 
 
 import './App.css';
@@ -9,6 +17,20 @@ import './App.css';
 
 
 function App() {
+
+    const [groceryList, setGroceryList] = useState([]);
+
+    const getShoppingList = () => {
+        axios.get('/groceries')
+        .then(response => {
+            setGroceryList(response.data)
+        })
+        .catch(err => {
+            alert('error getting groceries');
+            console.log(err);
+        })
+    }
+
 
     let [newGroceryItem, setNewGroceryItem] = useState('');
     let [newQuantity, setNewQuantity] = useState('');
@@ -45,6 +67,7 @@ function App() {
         <div className="App">
             <Header />
             <main>
+                <GroceryList list={groceryList} />
                 <GroceryForm />
 
             </main>

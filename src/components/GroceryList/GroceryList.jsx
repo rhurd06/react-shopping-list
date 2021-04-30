@@ -1,8 +1,10 @@
+import GroceryItem from '../GroceryItem/GroceryItem';
+
 function GroceryList(props){
     console.log('GrocerList props are:', props);
     return(
         <>
-            <h2>Grocery List</h2>
+            <h2>Shopping List</h2>
             <ul>
                 {props.list.map(item => 
                     (<GroceryItem key={item.id}
