@@ -14,7 +14,7 @@ router.post('/', (req, res) => {
         req.body.purchased
     ];
 
-    pool.query(queryString, queryArgs)
+    pool.query(queryText, queryArgs)
         .then(function (dbRes) {
             res.sendStatus(201);
         })
