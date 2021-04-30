@@ -5,6 +5,7 @@ function GroceryItem({name, quantity, purchased}){
         <div>
             <li>{name} {quantity} {purchased}</li>
             <button type="submit">Buy Item</button>
+            <button type="remove">Remove Item</button>
         </div>
     )
 }

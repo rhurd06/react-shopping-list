@@ -10,10 +10,12 @@ import './App.css';
 
 function App() {
 
-    const [groceryList, setGroceryList] = useState([]);
+    let [groceryList, setGroceryList] = useState([]);
+    let [newGroceryItem, setNewGroceryItem] = useState('');
+    let [newQuantity, setNewQuantity] = useState('');
 
     const getShoppingList = () => {
-        axios.get('/groceries')
+        axios.get('/list')
         .then(response => {
             setGroceryList(response.data)
         })
@@ -23,8 +25,6 @@ function App() {
         })
     }
 
-    let [newGroceryItem, setNewGroceryItem] = useState('');
-    let [newQuantity, setNewQuantity] = useState('');
 
     //on load, get groceries
     useEffect(() => {
@@ -42,7 +42,7 @@ function App() {
     }
 
     const addGroceries = () => {
-        axios.post('/groceries', {name: newGroceryItem, quantity: newQuantity})
+        axios.post('/list', {name: newGroceryItem, quantity: newQuantity})
             .then(response => {
                 //clear inputs
                 setNewGroceryItem('');
