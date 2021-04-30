@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
-import Header from '../Header/Header.jsx'
+import Header from '../Header/Header.jsx';
 import GroceryForm from '../GroceryForm/GroceryForm'
 import GroceryList from '../GroceryList/GroceryList';
 
@@ -31,6 +31,7 @@ function App() {
     }, [])
 
     const handleSubmit = (event) => {
+        event.preventDefault();
         if (newGroceryItem) {
             addGroceries();
         }
@@ -57,7 +58,13 @@ function App() {
         <div className="App">
             <Header />
             <main>
-                <GroceryForm />
+                <GroceryForm 
+                    newGroceryItem={newGroceryItem}
+                    setNewGroceryItem={setNewGroceryItem}
+                    newQuantity={newQuantity}
+                    setNewQuantity={setNewQuantity}
+                    handleSubmit={handleSubmit}
+                />
                 <GroceryList list={groceryList} />
 
             </main>
