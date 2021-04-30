@@ -4,7 +4,7 @@ import axios from 'axios';
 import Header from '../Header/Header.jsx';
 import GroceryForm from '../GroceryForm/GroceryForm'
 import GroceryList from '../GroceryList/GroceryList';
-
+import Reset from '../Reset/Reset';
 import './App.css';
 
 function App() {
@@ -66,7 +66,7 @@ function App() {
                     handleSubmit={handleSubmit}
                 />
                 <GroceryList list={groceryList} />
-
+                <Reset />
             </main>
         </div>
     );
