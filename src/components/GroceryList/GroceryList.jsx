@@ -1,3 +1,5 @@
+import GroceryItem from '../GroceryItem/GroceryItem';
+
 function GroceryList(props){
     console.log('GrocerList props are:', props);
     return(
