@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
 
 import Header from '../Header/Header.jsx';
@@ -6,6 +7,7 @@ import GroceryForm from '../GroceryForm/GroceryForm'
 import GroceryList from '../GroceryList/GroceryList';
 import Reset from '../Reset/Reset';
 import './App.css';
+
 
 function App() {
 
@@ -53,6 +55,17 @@ function App() {
                 console.log(err);
             })
     };//end addGroceries
+
+    const buyItem = () => {
+        axios.put('/list/:id', {itemId, purchased})
+        .then(response => {
+            console.log('change to purchased')
+            getShoppingList();
+        })
+        .catch( error => {
+            console.log('Error updating item', error);
+        })
+    };
 
     return (
         <div className="App">
