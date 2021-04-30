@@ -1,7 +1,10 @@
 function GroceryItem({name, quantity, purchased}){
     //console.log('Shopping list item props are:', props);
     return(
-        <li>{name} {quantity} {purchased}</li>
+        <div>
+            <li>{name} {quantity} {purchased}</li>
+            <button type="submit">Buy Item</button>
+        </div>
     )
 }
 

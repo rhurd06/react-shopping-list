@@ -1,19 +1,11 @@
-
-
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 
 import Header from '../Header/Header.jsx';
+import GroceryForm from '../GroceryForm/GroceryForm'
 import GroceryList from '../GroceryList/GroceryList';
 
-
-import React, { useEffect, useState } from 'react';
-
-import GroceryForm from '../GroceryForm/GroceryForm'
-
-
-
 import './App.css';
-
-
 
 function App() {
 
@@ -29,7 +21,6 @@ function App() {
             console.log(err);
         })
     }
-
 
     let [newGroceryItem, setNewGroceryItem] = useState('');
     let [newQuantity, setNewQuantity] = useState('');
