@@ -21,7 +21,6 @@ function App() {
         })
     }
 
-
     let [newGroceryItem, setNewGroceryItem] = useState('');
     let [newQuantity, setNewQuantity] = useState('');
 
@@ -57,8 +56,8 @@ function App() {
         <div className="App">
             <Header />
             <main>
-                <GroceryList list={groceryList} />
                 <GroceryForm />
+                <GroceryList list={groceryList} />
 
             </main>
         </div>
