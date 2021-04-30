@@ -7,6 +7,7 @@ import GroceryForm from '../GroceryForm/GroceryForm'
 import GroceryList from '../GroceryList/GroceryList';
 
 import './App.css';
+import { response } from 'express';
 
 function App() {
 
@@ -54,6 +55,17 @@ function App() {
                 console.log(err);
             })
     };//end addGroceries
+
+    const buyItem = () => {
+        axios.put('/list/:id', {itemId, purchased})
+        .then(response => {
+            console.log('change to purchased')
+            getShoppingList();
+        })
+        .catch( error => {
+            console.log('Error updating item', error);
+        })
+    };
 
     return (
         <div className="App">
