@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+
 
 import Header from '../Header/Header.jsx';
 import GroceryList from '../GroceryList/GroceryList';
@@ -7,7 +7,6 @@ import GroceryList from '../GroceryList/GroceryList';
 
 import React, { useEffect, useState } from 'react';
 
-import Header from '../Header/Header.jsx'
 import GroceryForm from '../GroceryForm/GroceryForm'
 
 
@@ -41,6 +40,7 @@ function App() {
     }, [])
 
     const handleSubmit = (event) => {
+        event.preventDefault();
         if (newGroceryItem) {
             addGroceries();
         }
@@ -67,8 +67,14 @@ function App() {
         <div className="App">
             <Header />
             <main>
+                <GroceryForm 
+                    newGroceryItem={newGroceryItem}
+                    setNewGroceryItem={setNewGroceryItem}
+                    newQuantity={newQuantity}
+                    setNewQuantity={setNewQuantity}
+                    handleSubmit={handleSubmit}
+                />
                 <GroceryList list={groceryList} />
-                <GroceryForm />
 
             </main>
         </div>
