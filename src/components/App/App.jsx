@@ -9,6 +9,16 @@ import './App.css';
 function App() {
     const [groceryList, setGroceryList] = useState([]);
 
+    const getShoppingList = () => {
+        axios.get('/groceries')
+        .then(response => {
+            setGroceryList(response.data)
+        })
+        .catch(err => {
+            alert('error getting groceries');
+            console.log(err);
+        })
+    }
     return (
         <div className="App">
             <Header />
